@@ -11,7 +11,7 @@
    
 
    <% if @article.errors.any? %>
-   <h2> The article canmot be created for the following reason </h2>
+   <h2> The article cannot be created for the following reason </h2>
    <ul>
      <% @article.errors.full_messages.each do |msg| %>
      <li><%= msg %></li>
@@ -33,5 +33,7 @@
 
 
     <% end %>
+        <%= link_to "back to articles", articles_path %>
+
 </body>
 </html>
