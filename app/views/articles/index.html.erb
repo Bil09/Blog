@@ -9,10 +9,10 @@
 <body>
     <h1>List all articles</h1>
     <p><%= link_to "Create a new article", new_article_path %></p>
-    <table>
+    <table class="table">
     <tr>
-      <th>Title</th>
-      <th>Description</th>
+      <th scope="col">Title</th>
+      <th scope="col">Description</th>
       </tr>
       <% @allarticles.each do |article|%>
       <tr>

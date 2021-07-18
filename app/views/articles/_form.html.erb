@@ -11,12 +11,14 @@
    
 
    <% if @article.errors.any? %>
+   <div class="alert alert-danger" role="alert">
    <h2> The article cannot be created for the following reason </h2>
    <ul>
      <% @article.errors.full_messages.each do |msg| %>
      <li><%= msg %></li>
     <% end %>
     </ul>
+    </div>
     <% end %>
     <%= form_for @article do |f| %>
        <p>
