@@ -1,1 +1,30 @@
+
 @import "bootstrap";
+
+
+#logo{
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 1.7em;
+    letter-spacing: -1px;
+}
+
+#jhome{
+    background-image: url('/assets/background_home.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+  // position: absolute;
+ }
+
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: gray;
+    color: white;
+    text-align: center;
+}
+#opacity{
+   opacity: 0.8;
+}

@@ -6,24 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
     <style>
-    *{text-decoration: none;}
-        body{
-            min-width: 100vh;
-            color: black;
-            background-color: aliceblue;
-            font-family: 'Times New Roman', sans-serif;
-        }
-        header{
-            background-color: aquamarine;
-            color: bisque;
-            font: 1em sans-serif;
-            display: flex;
-            margin-bottom: 25px;
-        }
-        h1{
-            align-items: center;
-            justify-content: center;
-        }
         main{
             display: flex;
             flex-direction: row;
@@ -34,33 +16,16 @@
             width: 70%;
             height: 70%;
         }
-        footer{
-            background-color: black;
-            color: azure;
-             min-height: 120px;
-            min-width: 100%;
-            position: absolute;
-            bottom: 0px;
-        }
+      
     </style>
 </head>
-<body>
-    <header>
-        <h1>Alpha Blog</h1>
-    </header>
-    <main>
-        <content class="f-c">
-            <img src="https://cdn.pixabay.com/photo/2021/05/08/11/24/city-6238228_1280.jpg">
-            <p>a beatiful image of a street </p>
-        </content>
-        <content class="s-c">
-            <img src="https://cdn.pixabay.com/photo/2017/07/09/19/21/tree-2487889_1280.jpg">
-            <p>a beatiful old tree </p>
-        </content>
-    </main>
-    <footer>
-      <%= link_to "about", about_path %> ||
-      <%= link_to "Blog", articles_path %>
-    </footer>
+<body id="jhome">
+<div class="bg-light p-5 rounded-lg m-3" id="opacity">
+  <h1 class="display-4">Blogenesis</h1>
+  <p class="lead">Blogenesis is a free Blog-site where you can post any kind of post.</p>
+  <hr class="my-4">
+  <p>Are you tired to pay for a blog site, have a bad quality and stuff like this? If yes, you are in he right place. Start your adeventure with us!</p>
+  <a class="btn btn-primary btn-lg" href="#" role="button">Sign up now</a>
+</div>
 </body>
 </html>
