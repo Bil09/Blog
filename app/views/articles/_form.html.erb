@@ -20,21 +20,23 @@
     </ul>
     </div>
     <% end %>
+    <div class="form-label">
     <%= form_for @article do |f| %>
        <p>
        <%= f.label :title %>
-       <%= f.text_field :title %>
+       <%= f.text_field :title, placeholder: "min. 5 charachters", class: "form-control" %>
        </p>
        <p>
        <%= f.label :description %><br>
-       <%= f.text_area :description %>
+       <%= f.text_area :description, placeholder: "min. 10 charachters and max.350", class: "form-control" %>
        </p>
        <p>
-       <%= f.submit %>
+       <%= f.submit class: "btn btn-success"%>
        </p>
 
 
     <% end %>
+    </div>
         <%= link_to "back to articles", articles_path %>
 
 </body>
