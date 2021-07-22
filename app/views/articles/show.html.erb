@@ -4,16 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
 </head>
 <body>
-    <h1>Showing the created article</h1>
-    <p> 
+  
+    <h1 class="text-center"> 
         Title: <%= @article.title %>
+    </h1>
+    <p class="text-center"> 
+       <%= @article.description %>
     </p>
-    <p> 
-        Description: <%= @article.description %>
-    </p>
-    <%= link_to "back to articles", articles_path %>
+    <%= link_to "view all articles", articles_path, class: "btn btn-success btn-sm" %>
+    <%= link_to "Edit", edit_article_path(@article), class: "btn btn-primary btn-sm" %>
+    <%= link_to "Delete this article", article_path(@article), method: :delete, data: { confirm: 'Are you sure? Do you want to delete this article?'}, class: "btn btn-danger btn-sm" %>
 </body>
 </html>

@@ -10,24 +10,25 @@
 }
 
 #jhome{
+    min-height: 95vh;
     background-image: url('/assets/background_home.jpg');
     background-size: cover;
     background-repeat: no-repeat;
   // position: absolute;
  }
 
-.footer{
+footer{
     position: relative;
-    left: 0;
-    bottom: 0;
     width: 100%;
     background-color: gray;
     color: white;
     text-align: center;
+    margin-top: auto;
 }
 #opacity{
    opacity: 0.8;
 }
-body{
-    min-height: 95vh;
-}
+//ody{
+  //  min-height: 95vh;
+    
+//}
