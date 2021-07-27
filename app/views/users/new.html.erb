@@ -1,0 +1,30 @@
+
+   <% if @user.errors.any? %>
+   <div class="alert alert-danger" role="alert">
+   <h2> The account cannot be created for the following reason </h2>
+   <ul>
+     <% @user.errors.full_messages.each do |msg| %>
+     <li><%= msg %></li>
+    <% end %>
+    </ul>
+    </div>
+    <% end %>
+    <div class="form-label">
+    <%= form_for @user do |f| %>
+       <p>
+       <%= f.label :username %>
+       <%= f.text_field :username, placeholder: "Enter username", class: "form-control" %>
+       </p>
+       <p>
+       <%= f.label :email %><br>
+       <%= f.email_field :email, placeholder: "Enter email", class: "form-control" %>
+       </p>
+       <%= f.label :password %><br>
+       <%= f.password_field :password, placeholder: "Enter password", class: "form-control" %>
+       </p>
+       <p class="text=center">
+       <%= f.submit class: "btn btn-success"%>
+        <%= link_to "Cancel request and go back to home", root_path, class: "btn btn-primary"%>
+    </p>
+    <% end %>
+    </div>

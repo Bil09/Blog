@@ -28,7 +28,19 @@ footer{
 #opacity{
    opacity: 0.8;
 }
-//ody{
-  //  min-height: 95vh;
-    
-//}
+.article-index{
+  background-color: lightgray;
+  width: 45%;
+  height:  35%;
+  margin: auto;
+  border: 3px solid rgb(252, 222, 54);
+  padding: 30px;
+}
+.size-show-user-info{
+  font-size: 18px;
+  font-family: 'Times New Roman';
+}
+.body{
+  height: 100%;
+  min-height: 95vh;
+}
