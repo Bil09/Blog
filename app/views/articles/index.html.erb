@@ -1,3 +1,6 @@
 
     <h1 class="text-center">List all articles</h1>
+    <div class="digg_pagination">
+    <%= will_paginate @allarticles %>
+    </div>
       <%= render "article", obj: @allarticles %>
