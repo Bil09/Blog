@@ -1,1 +1,13 @@
 <h1 class="text-center">All users</h1>
+<%= will_paginate @user, class: "digg_pagination" %>
+<% @user.each do |user| %>
+  <ul class="list-user">
+    <div class="row text-center">
+      <div class="card card-body bg-light col-md-4">
+        <li> <%= link_to gravatar_for(user), user_path(user) %> </li>
+        <li><%= link_to user.username, user_path(user) %> </li>
+        <li><%= pluralize(user.articles.count, "articles") if user.articles %>
+      </div>
+    </div>
+  </ul>      
+<%end%>

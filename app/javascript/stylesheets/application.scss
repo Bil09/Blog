@@ -50,6 +50,7 @@ footer{
 .digg_pagination {
   background: white;
   cursor: default;
+  margin: 10px;
   /* self-clearing method: */ }
   .digg_pagination a, .digg_pagination span, .digg_pagination em {
     padding: 0.2em 0.5em;
@@ -94,4 +95,7 @@ footer{
   *:first-child + html .digg_pagination {
     overflow: hidden; 
 }
-// end styling for will paginate
+
+.list-user{
+  list-style: none;
+}

@@ -1,14 +1,11 @@
 <h1 class="text-center">Welcome to <%= @user.username %>'s page</h1> 
-<div class= "row justify-content-center">
+<div class= "row justify-content-center ">
   <div class="col text-center">
    <%= gravatar_for @user, size: 200 %>
   </div>
 </div>  
-<h4 class="text-center"><%= @user.username %>'s articles</h4>
-<div class="center digg_pagination">
-<%= will_paginate @user_articles %>
-</div>
+<h4 class="text-center card-title"><%= @user.username %>'s articles</h4>
+<%= will_paginate @user_articles, class: "digg_pagination" %>
 <%= render "articles/article", obj: @user_articles %>
-<div class="center digg_pagination">
-<%= will_paginate @user_articles %>
-</div>
+
+<%= will_paginate @user_articles, class: "digg_pagination" %>
