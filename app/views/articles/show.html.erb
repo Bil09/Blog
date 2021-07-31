@@ -6,12 +6,14 @@
         <small class="size-show-user-info">
          Created by: <%= @article.user.username%>
          <br>
-         at: <%= @article.user.created_at%>
+         <%= time_ago_in_words(@article.user.created_at)%> ago
         </small>
     </h1>
     <p class="text-center"> 
        <%= @article.description %>
     </p>
     <%= link_to "view all articles", articles_path, class: "btn btn-success btn-sm" %>
-    <%= link_to "Edit", edit_article_path(@article), class: "btn btn-primary btn-sm" %>
-    <%= link_to "Delete this article", article_path(@article), method: :delete, data: { confirm: 'Are you sure? Do you want to delete this article?'}, class: "btn btn-danger btn-sm" %>
+    <% if logged_in? && current_user == @article.user %>
+          <%= link_to "Edit", edit_article_path(@article), class: "btn btn-primary btn-sm" %>
+          <%= link_to "Delete this article", article_path(@article), method: :delete, data: { confirm: 'Are you sure? Do you want to delete this article?'}, class: "btn btn-danger btn-sm" %>
+    <%end%>

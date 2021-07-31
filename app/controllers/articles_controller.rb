@@ -1,5 +1,7 @@
 class ArticlesController < ApplicationController
 before_action :set_article_id, only: [:edit, :show, :update, :destroy]
+before_action :require_user, expect: [:index, :show]
+before_action :require_same_user, only: [:edit, :update, :destroy]
 
     def index
       @allarticles = Article.paginate(page: params[:page], per_page: 5)
@@ -47,6 +49,14 @@ before_action :set_article_id, only: [:edit, :show, :update, :destroy]
 
       def set_article_id
         @article = Article.find(params[:id])
+      end
+      
+
+      def require_same_user
+        if current_user != @article.user
+          flash[:danger] = "You are not the owner of the article"
+          redirect_to root_path
+        end
       end
       
 
