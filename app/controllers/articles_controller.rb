@@ -18,7 +18,7 @@ before_action :require_same_user, only: [:edit, :update, :destroy]
         @article = Article.new(article_params)
         @article.user = current_user
         if @article.save
-          flash[:notice] = "Hey, the article was successfully created"
+          flash[:success] = "Hey, the article was successfully created"
           redirect_to article_path(@article)
         else
           render 'new'
@@ -26,7 +26,7 @@ before_action :require_same_user, only: [:edit, :update, :destroy]
     end
     def update
       if @article.update(article_params)
-        flash[:notice] = "Article was successfully updated"
+        flash[:success] = "Article was successfully updated"
         redirect_to article_path(@article)
       else
         render 'edit'
@@ -36,7 +36,7 @@ before_action :require_same_user, only: [:edit, :update, :destroy]
     end
     def destroy
       @article.destroy
-      flash[:notice] = "The article was successfully deleted"
+      flash[:danger] = "The article was successfully deleted"
       redirect_to articles_path
     end
     
@@ -53,7 +53,7 @@ before_action :require_same_user, only: [:edit, :update, :destroy]
       
 
       def require_same_user
-        if current_user != @article.user
+        if current_user != @article.user and !current_user.admin?
           flash[:danger] = "You are not the owner of the article"
           redirect_to root_path
         end

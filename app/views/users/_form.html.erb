@@ -1,13 +1,5 @@
-  <% if @user.errors.any? %>
-   <div class="alert alert-danger" role="alert">
-   <h2> The account cannot be updated for the following reason </h2>
-   <ul>
-     <% @user.errors.full_messages.each do |msg| %>
-     <li><%= msg %></li>
-    <% end %>
-    </ul>
-    </div>
-    <% end %>
+  <%= render 'shared/errors', obj: @user %>
+
     <div class="form-label">
     <%= form_for @user do |f| %>
        <p>

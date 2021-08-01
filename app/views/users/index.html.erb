@@ -6,7 +6,10 @@
       <div class="card card-body bg-light col-md-4">
         <li> <%= link_to gravatar_for(user), user_path(user) %> </li>
         <li><%= link_to user.username, user_path(user) %> </li>
-        <li><%= pluralize(user.articles.count, "articles") if user.articles %>
+        <li><%= pluralize(user.articles.count, "articles") if user.articles %></li>
+        <% if logged_in? and current_user.admin? %>
+        <li><%= link_to "Delete this user", user_path(user), method: :delete, data: {confirm: "Are you sure?"} %></li>
+        <%end%>
       </div>
     </div>
   </ul>      
