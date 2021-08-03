@@ -32,7 +32,8 @@ development:
 
 test:
   <<: *default
-  database: Blog_test
+  database: blog_test
+  username: bilhid
 # for a full overview on how database connection configuration can be specified.
 #
 production:
