@@ -24,6 +24,7 @@ gem 'jbuilder', '~> 2.7'
 
  gem 'will_paginate', '~> 3.1.8'
 
+ gem 'rails-controller-testing'
 
 
 # Use Active Storage variant
