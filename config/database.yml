@@ -25,7 +25,7 @@ development:
   <<: *default
   database: blog_development
   encoding: UTF-8
-  username: blog
+  username: postgres
   password: giungla
   host: localhost
   port: 5432
