@@ -22,4 +22,5 @@ class CategoriesTest < ActionDispatch::IntegrationTest
         assert_select 'h2'
     end
 
+
 end
