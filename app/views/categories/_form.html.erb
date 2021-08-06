@@ -1,0 +1,14 @@
+ <%= render 'shared/errors', obj: @category %>
+
+    <div class="form-label">
+    <%= form_for @category do |f| %>
+       <p>
+       <%= f.label :name %>
+       <%= f.text_field :name, placeholder: "Category", class: "form-control" %>
+       </p>
+       <p class="text-center">
+       <%= f.submit class: "btn btn-success"%>
+        <%= link_to "Cancel request and go back to home", root_path, class: "btn btn-primary"%>
+    </p>
+    <% end %>
+    </div>

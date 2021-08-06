@@ -4,7 +4,8 @@
 
 <div class="list-group">
   <% @categories.each do |category| %>
-    <%= link_to category.name, categories_path(category), class: "list-group-item list-group-item-action" %>
+      <p><span class="badge bg-warning text-dark"><%= pluralize(category.articles.count, "article")%></span></p>
+    <p><%= link_to category.name, category_path(category), class: "list-group-item list-group-item-action col" %></p>
   <%end%>
 </div>
  <%= will_paginate @categories, class: "digg_pagination" %>

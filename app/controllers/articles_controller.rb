@@ -44,7 +44,7 @@ before_action :require_same_user, only: [:edit, :update, :destroy]
     private
 
       def article_params
-        params.require(:article).permit(:title, :description)
+        params.require(:article).permit(:title, :description, category_ids: [])
       end
 
       def set_article_id
@@ -57,7 +57,10 @@ before_action :require_same_user, only: [:edit, :update, :destroy]
           flash[:danger] = "You are not the owner of the article"
           redirect_to root_path
         end
+
+        
       end
+        
       
 
 end

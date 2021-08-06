@@ -1,0 +1,12 @@
+
+    <h1 class="text-center"><%="Category: #{@category.name}"%></h1>
+     <%if current_user.admin? && logged_in? %>
+      <p class="text-center"><%= link_to "Edit this category?", edit_category_path(@category), class: "badge bg-secondary text-black" %></p>
+     <%end%>
+    <div class="digg_pagination">
+    <%= will_paginate @category_art %>
+    </div>
+      <%= render "articles/article", obj: @category_art %>
+       <div class="digg_pagination">
+    <%= will_paginate @category_art %>
+    </div>

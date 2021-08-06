@@ -9,6 +9,11 @@
          <%= time_ago_in_words(@article.user.created_at)%> ago
         </small>
     </h1>
+    <% if @article.categories.any? %>
+    
+      <p class="text-center">Categories: <%= render @article.categories %></p>
+    
+    <%end%>
     <p class="text-center"> 
        <%= @article.description %>
     </p>
